@@ -20,6 +20,7 @@ class CreatePatientsTable extends Migration
             $table->integer('phone');
             $table->string('address');
             $table->integer('institution_id')->unsigned();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

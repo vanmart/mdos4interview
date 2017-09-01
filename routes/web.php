@@ -26,9 +26,7 @@ Route::post('/institutions','InstitutionController@store');
 Route::get('/patients','PatientController@index');
 Route::get('/patients/create','PatientController@create');
 Route::get('/patients/{id}','PatientController@show');
+Route::get('/patients/edit/{id}','PatientController@edit');
+Route::post('/patients/{id}','PatientController@update');
 Route::post('/patients','PatientController@store');
-
-
-
-
-
+Route::get('/patients/destroy/{id}','PatientController@destroy');
