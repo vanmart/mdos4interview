@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-		<h1>Institutions</h1>	
+		<h1>Institutions</h1>
+		<a class="btn btn-outline-success" href="{{url('institutions/create')}}">Create</a>	
 		<hr>
 		<div class="row">
 		@foreach ($institutions as $institution)

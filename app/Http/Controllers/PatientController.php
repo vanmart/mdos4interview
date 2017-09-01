@@ -75,7 +75,9 @@ class PatientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $patient = Patient::find($id);
+
+        return view('patients.edit',compact('patient'));
     }
 
     /**
@@ -87,7 +89,14 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $patient = Patient::find($id);
+
+        $patient->name = $request->get('name');
+        $patient->lastname = $request->get('lastname');
+        $patient->address = $request->get('address');
+        $patient->phone = $request->get('phone');
+        $patient->save();
+        return redirect('/patients');
     }
 
     /**
@@ -98,6 +107,9 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $patient = Patient::find($id);
+        $patient->delete();
+
+        return redirect('/patients');
     }
 }
